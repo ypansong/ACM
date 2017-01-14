@@ -27,3 +27,9 @@
 *.exe
 *.out
 *.app
+
+# vs folder
+.vs
+Debug
+*.db
+*.vcxproj.filters
