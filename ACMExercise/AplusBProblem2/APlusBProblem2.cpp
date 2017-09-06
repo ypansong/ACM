@@ -37,11 +37,30 @@ string add(string a, string b)
         min_length++;
     }
 
-    string ret_value;
-    for (int i = sum.length(); i >= 0; i--)
+    string temp_ret_value;
+    for (int i = sum.length() - 1; i >= 0; i--)
     {
-        ret_value.push_back(sum[i]);
+        temp_ret_value.push_back(sum[i]);
     }
+
+    string ret_value;
+    bool isFindNonZero = false;
+    for (int i = 0; i < temp_ret_value.length(); i++)
+    {
+        if (temp_ret_value[i] == '0')
+        {
+            if (isFindNonZero)
+            {
+                ret_value.push_back(temp_ret_value[i]);
+            }
+        }
+        else
+        {
+            isFindNonZero = true;
+            ret_value.push_back(temp_ret_value[i]);
+        }
+    }
+
     return ret_value;
 }
 
